@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lista de Compras da Família</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Ícones -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>Lista de Compras Familia Ferraz</h1>
+                <p class="subtitle">Sincronizada em tempo real</p>
+            </div>
+            <div id="connection-status" class="status-indicator">
+                <div class="dot red"></div>
+                <span>Desconectado</span>
+            </div>
+        </header>
+
+        <div class="add-item-container">
+            <form id="add-item-form">
+                <div class="input-group">
+                    <input type="text" id="item-name" placeholder="O que precisamos comprar?" required autocomplete="off">
+                </div>
+                <div class="controls-group">
+                    <select id="item-category" required>
+                        <option value="Hortifruti">Hortifruti</option>
+                        <option value="Mercearia" selected>Mercearia</option>
+                        <option value="Carnes">Carnes & Açougue</option>
+                        <option value="Limpeza">Limpeza</option>
+                        <option value="Higiene">Higiene Pessoal</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                    <button type="submit" class="btn-add">
+                        <i class="ri-add-line"></i> Adicionar
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <main class="lists-container" id="lists-container">
+            <div class="loading-state">
+                <i class="ri-loader-4-line spin"></i>
+                <p>Carregando lista...</p>
+            </div>
+            <!-- As categorias e itens serão renderizados aqui pelo JS -->
+        </main>
+        
+
+    </div>
+
+    <!-- Módulo JS principal -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
